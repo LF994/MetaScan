@@ -8,20 +8,17 @@ It will scan current Anaconda/Python base prefix and make report.
 Currently metascan processes only file/folder names, not contents.
 Following modes are implemented:
 
-* metascan fnd name
-Search for specified name (case-insensitive search for name* on sys.path())
+ _metascan fnd name_  -- Search for specified name (case-insensitive search for name* on sys.path())
 
-* metascan sim
-Similar name files or folders on sys.path(). It shows possible package duplication
+ _metascan sim_  -- Similar name files or folders on sys.path(). It shows possible package duplication
 with same or different version in metadata. 
 
-* metascan mix
- It is default mode. It reports version conflicts for same package names.
+ _metascan mix_  -- It is default mode. It reports version conflicts for same package names.
 Normally it process sys.path() folder list and in case of Anaconda it also can scan conda-meta folder.
 With option -p it will add processing of pkgs folder also.
 Folders "conda-meta" and "pkgs" available in Anaconda only, not in Python.
 
-Report with version mismatch found presented below (default mode is mix):
+Report with version mismatches found presented below (default mode is mix):
 
 ``` console
 --- metascan version 0.0.1 for prefix: /usr
@@ -45,7 +42,7 @@ FLDR: /usr/lib/python3.10/site-packages/setuptools-67.6.1.dist-info
 
 ```
 
-Here is report with similar packages found on sys.path():
+Next is report with similar packages found on sys.path() (mode sim):
 
 ``` console
 python metascan.py sim
